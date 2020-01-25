@@ -1,0 +1,16 @@
+{
+  "name": "week1",
+  "version": "1.0.0",
+  "description": "As part of the web frameworks course, students are required to submit exercises weekly that strengthen their understanding of OOP concepts using javascript and/or typescript.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "sharairi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "typescript": "^3.7.5"
+  }
+}
