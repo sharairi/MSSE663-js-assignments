@@ -31,7 +31,7 @@ class MonkeyClass {
     origin = "Africa";
 
     Jump(monkeyType) {
-        return monkeyType + " Jumbed in the class";
+        return monkeyType + " jumped in the class";
     };
 
     Sitdown(monkeyType) {
