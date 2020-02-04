@@ -1,5 +1,6 @@
 "use strict";
 // Source code here
+Object.defineProperty(exports, "__esModule", { value: true });
 class Employee {
     constructor(code, name, isActive) {
         this.empCode = code;
@@ -23,6 +24,7 @@ class Employee {
         return new Array("Monday", "Tuesday", "Thursday");
     }
 }
+exports.Employee = Employee;
 let emp = new Employee(1, "Mohammad", true);
 console.log(emp.getSalary(emp.empCode));
 console.log(emp.getLastVacationDate(emp.empCode));
