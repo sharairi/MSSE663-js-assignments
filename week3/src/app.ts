@@ -1,6 +1,6 @@
 // Source code here
 
-interface IEmployee {
+export interface IEmployee {
     empCode: number;
     name: string;
     isActive: boolean;
@@ -8,10 +8,10 @@ interface IEmployee {
     getSalary: (arg0: number) => string;
     getLastVacationDate: (arg0: number) => Date;
     getEmployeeStatus: (arg0: number) => boolean;
-    getEmployeeWorkingDays(arg0: number);
+    getEmployeeWorkingDays: (arg0: number) => string[];
 }
 
-class Employee implements IEmployee {
+export class Employee implements IEmployee {
     empCode: number;
     name: string;
     isActive: boolean;
@@ -36,7 +36,11 @@ class Employee implements IEmployee {
         return date;
     }
 
-    getEmployeeWorkingDays(arg0: number) { }
+    getEmployeeWorkingDays(arg0: number): string[] {
+
+        return new Array("Monday", "Tuesday", "Thursday");
+
+    }
 }
 
 let emp = new Employee(1, "Mohammad", true);
