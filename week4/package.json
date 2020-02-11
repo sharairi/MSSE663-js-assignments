@@ -9,7 +9,7 @@
     "dev": "ts-node src/spread.ts",
     "tsc": "tsc"
   },
-  "author": "",
+  "author": "Mohammad Alsharayri",
   "license": "ISC",
   "dependencies": {
     "typescript": "^3.7.2"
