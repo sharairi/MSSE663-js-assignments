@@ -12,13 +12,14 @@ console.log(originalNumbers2);
 // #2 Combining arrays
 export const winners = ['first'];
 export const runnerUps = ['second', 'third', 'fourth', 'fifth'];
+export const modified = ['second', 'third', 'fourth', 'fifth'];
 
-// export const originalContenders = runnerUps.unshift(winners[0]);
-// console.log(originalContenders);
+export const originalContenders = modified.unshift(winners[0]);
+console.log(originalContenders);
 
 // refactor here
 
-export const originalContenders2 = [winners, ...runnerUps];
+export const originalContenders2 = [...winners, ...runnerUps];
 console.log(originalContenders2);
 
 // #3 Combining objects

@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import 'mocha';
 import {
     originalContenders2, originalNumbers, originalPersons, originalUpdates, originalUpdates2, originalNumbers2,
-    originalPersons2
+    originalPersons2,modified
 } from './spread';
 
 describe('test spread.ts file', () => {
@@ -12,7 +12,7 @@ describe('test spread.ts file', () => {
     });
 
     it('should be ~["first","second", "third", "fourth", "fifth"]~', () => {
-        expect(['first', 'second', 'third', 'fourth', 'fifth']).to.be.eql(originalContenders2);
+        expect(modified).to.be.eql(originalContenders2);
     });
 
     it('should be ~ {man: "Bob",boy: "Kyle"}~', () => {
