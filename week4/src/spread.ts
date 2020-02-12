@@ -1,13 +1,13 @@
 // #1 Array copying
 export const numbers = [1, 2, 3, 4, 5];
 
-// export const originalNumbers = numbers.map(number => number);
-// console.log(originalNumbers);
+export const originalNumbers = numbers.map(number => number);
+console.log(originalNumbers);
 
 // refactor here
 
-export const originalNumbers = [...numbers];
-console.log(originalNumbers);
+export const originalNumbers2 = [...numbers];
+console.log(originalNumbers2);
 
 // #2 Combining arrays
 export const winners = ['first'];
@@ -18,8 +18,8 @@ export const runnerUps = ['second', 'third', 'fourth', 'fifth'];
 
 // refactor here
 
-export const originalContenders = [winners, ...runnerUps];
-console.log(originalContenders);
+export const originalContenders2 = [winners, ...runnerUps];
+console.log(originalContenders2);
 
 // #3 Combining objects
 export const bob = {
@@ -30,11 +30,11 @@ export const kyle = {
   boy: 'Kyle'
 };
 
-// export const originalPersons = Object.assign(bob, kyle);
+export const originalPersons = Object.assign(bob, kyle);
 
 // refactor here
 
-export const originalPersons = { ...bob, ...kyle };
+export const originalPersons2 = { ...bob, ...kyle };
 console.log(originalPersons);
 
 // #4 Modifying values in arrays of objects
