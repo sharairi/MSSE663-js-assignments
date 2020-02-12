@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import 'mocha';
-import { originalContenders, originalNumbers, originalPersons, originalUpdates } from './spread';
+import { originalContenders, originalNumbers, originalPersons, originalUpdates,originalUpdates2 } from './spread';
 
 describe('test spread.ts file', () => {
 
@@ -17,20 +17,7 @@ describe('test spread.ts file', () => {
     });
 
     it('update task id =1', () => {
-        expect([
-            {
-                id: 0,
-                task: 'Do the thing'
-            },
-            {
-                id: 1,
-                task: 'Do the other thing... again'
-            },
-            {
-                id: 2,
-                task: 'Do the last thing'
-            }
-        ]).to.be.equal(originalUpdates);
+        expect(originalUpdates2).to.be.equal(originalUpdates);
     });
 
 });

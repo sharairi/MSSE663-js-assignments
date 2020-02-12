@@ -58,26 +58,21 @@ export const update = {
   task: 'Do the other thing... again'
 };
 
-// export const originalUpdates = data.map(task => {
-//   if (task.id === update.id) {
-//     return Object.assign(task, update);
-//   }
-//   return task;
-// });
+export const originalUpdates = data.map(task => {
+  if (task.id === update.id) {
+    return Object.assign(task, update);
+  }
+  return task;
+});
 
 // refactor here
 
-export const originalUpdates = updateValues(data);
-
-function updateValues(...args) {
-  let result = 0;
-
-  for (let arg of args) {
-    if (arg.id == update.id) {
-      return { ...update }
-    }
+export const originalUpdates2 = data.map(task => {
+  if (task.id === update.id) {
+    return { ...update }
   }
+  return task;
+});
 
-  return result
-}
+
 console.log(originalUpdates);
