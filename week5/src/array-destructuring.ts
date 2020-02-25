@@ -30,8 +30,10 @@ console.log(b); // 'banana'
 console.log(others); // ['chocolate, 'pears', 'oats', 'pizza']
 
 // #3 Array: Contruct a statement
-['hello', 'taylor'];
 
+let elements = ['hello', 'taylor'];
+
+console.log(elements.join() + '!');
 // construct statement here
 
 // expected result: 'hello, taylor!'
