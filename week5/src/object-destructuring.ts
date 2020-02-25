@@ -5,7 +5,7 @@ export const object = { name: 'elvis', title: 'hip swinger' };
 
 // Assign variables using ES6 so that we get (note, you cannot just make a completely new object):
 
-const { name: person, title: job } = object;
+export const { name: person, title: job } = object;
 
 console.log(person); // 'elvis'
 console.log(job); // 'hip swinger'
