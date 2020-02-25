@@ -22,7 +22,7 @@ export const nestedObject = {
 
 // deconstruct here
 
-const { user, address, id } = nestedObject;
+export const { user, address, id } = nestedObject;
 // expected results:
 console.log(user); // 'elvis'
 console.log(address); // { city: 'denver', state: 'colorado' }
@@ -33,7 +33,7 @@ console.log(id); // 1
 // reconstruct here
 
 // #3 Object with key value pairs: construct a statement
-{ greeting: 'hello', name: 'taylor' }
+export const msg = { greeting: 'hello', name: 'taylor' };
 
 // construct statement here
 
