@@ -5,7 +5,7 @@ function curryMe(string1, string2, string3): string {
 
 // source code here
 
-const curryMeCallBack = (string1: string = '1', string2: string = '2', string3: string = '3') => string1 + ' ' + string2 + ' ' + string3;
+export const curryMeCallBack = (string1: string = '1', string2: string = '2', string3: string = '3') => string1 + ' ' + string2 + ' ' + string3;
 
 console.log(curryMeCallBack);
 
@@ -21,16 +21,17 @@ function doMath(a) {
 
 // source code here
 
-const doMathCallBack = (a: number) => {
-  (b: number) => {
-    (c: number) => {
-      return a + b - c;
-    }
+export const subtract = (a: number) => (b: number) => (c: number) => { a + b - c };
 
-  }
+export const add = (a: number) => (b: number) => (c: number) => {
+  subtract(a)(b)(c);
 };
 
-console.log(doMathCallBack);
+export const doMathCurry = (a: number) => (b: number) => (c: number) => {
+  add(a)(b)(c);
+};
+
+console.log(doMathCurry);
 
 // #3 Write a curried function that returns an array containing the ninjas who have a black belt
 const ninjasOne = [
@@ -57,6 +58,10 @@ const ninjasTwo = [
 ];
 
 // source code here
+
+export const blackBelts = [...ninjasOne, ...ninjasTwo].filter(
+  ninja => ninja.belt === 'black';
+)
 
 /**
  * #4 Write a curried function that returns a new array of ninja objects with "status" added to each object.
