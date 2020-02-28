@@ -60,8 +60,8 @@ const ninjasTwo = [
 // source code here
 
 export const blackBelts = [...ninjasOne, ...ninjasTwo].filter(
-  ninja => ninja.belt === 'black';
-)
+  ninja => ninja.belt === 'black'
+);
 
 /**
  * #4 Write a curried function that returns a new array of ninja objects with "status" added to each object.
