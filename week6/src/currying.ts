@@ -5,6 +5,11 @@ function curryMe(string1, string2, string3): string {
 
 // source code here
 
+const curryMeCallBack = (string1: string = '1', string2: string = '2', string3: string = '3') => string1 + ' ' + string2 + ' ' + string3;
+
+console.log(curryMeCallBack);
+
+
 // #2 Hoist and convert nested functions to curried functions
 function doMath(a) {
   return function add(b) {
@@ -15,6 +20,17 @@ function doMath(a) {
 }
 
 // source code here
+
+const doMathCallBack = (a: number) => {
+  (b: number) => {
+    (c: number) => {
+      return a + b - c;
+    }
+
+  }
+};
+
+console.log(doMathCallBack);
 
 // #3 Write a curried function that returns an array containing the ninjas who have a black belt
 const ninjasOne = [
