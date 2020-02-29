@@ -1,17 +1,18 @@
 // #1 Convert this javascript function to a curried function
-function curryMe(string1, string2, string3): string {
+export function curryMe(string1, string2, string3): string {
   return string1 + ' ' + string2 + ' ' + string3;
 }
 
 // source code here
 
-export const curryMeCallBack = (string1: string = '1', string2: string = '2', string3: string = '3') => string1 + ' ' + string2 + ' ' + string3;
+export const curryMe2 = string1 => string2 => (string3): string =>
+  string1 + ' ' + string2 + ' ' + string3;
 
-console.log(curryMeCallBack);
+console.log(curryMe2);
 
 
 // #2 Hoist and convert nested functions to curried functions
-function doMath(a) {
+export function doMath(a) {
   return function add(b) {
     return function subtract(c) {
       return a + b - c;
@@ -34,7 +35,13 @@ export const doMathCurry = (a: number) => (b: number) => (c: number) => {
 console.log(doMathCurry);
 
 // #3 Write a curried function that returns an array containing the ninjas who have a black belt
-const ninjasOne = [
+
+interface Ninja {
+  name: string,
+  belt: string
+}
+
+const ninjasOne: Ninja[] = [
   { name: 'Michelangelo', belt: 'white' },
   { name: 'Donatello', belt: 'green' },
   { name: 'Raphael', belt: 'black' },
@@ -49,7 +56,7 @@ const ninjasOne = [
   { name: 'Wong Fei-hung', belt: 'green' }
 ];
 
-const ninjasTwo = [
+const ninjasTwo: Ninja[] = [
   { name: 'Michelangelo', belt: 'white' },
   { name: 'Donatello', belt: 'green' },
   { name: 'Raphael', belt: 'black' },
@@ -59,7 +66,7 @@ const ninjasTwo = [
 
 // source code here
 
-export const blackBelts = [...ninjasOne, ...ninjasTwo].filter(
+export const blackBelts: Ninja[] = [...ninjasOne, ...ninjasTwo].filter(
   ninja => ninja.belt === 'black'
 );
 
@@ -70,16 +77,46 @@ export const blackBelts = [...ninjasOne, ...ninjasTwo].filter(
  * @example { name: 'Colt', belt: 'green', status: 'warrior' }
  */
 
-const statusTypes = {
+type GenericObjec = { [key: string]: string };
+
+interface NinjaWarrior extends Ninja {
+  status: GenericObjec
+}
+
+const statusTypes: GenericObjec = {
   white: 'grasshopper',
   green: 'warrior',
   black: 'sensei'
 };
 
-const gamerStatusTypes = {
+const gamerStatusTypes: GenericObjec = {
   white: 'Noob',
   green: 'Choob',
   black: 'Legend'
 };
 
+// const mapper = (arr: Ninja[]) => (status: GenericObjec) => {
+//   arr.map((ninja: Ninja) => {
+//     return
+//     {
+//       ...ninja, status[ninjasTwo.belt]
+//     }
+//   }
+//   )
+// }
+
 // source code here
+
+export const ninjaWarrior1: NinjaWarrior[] = ninjasOne.map((ninja: Ninja) => {
+  return {
+    ...ninja,
+    status: statusTypes[ninja.belt]
+  };
+});
+
+export const ninjaWarrior2: NinjaWarrior[] = ninjasOne.map((ninja: Ninja) => {
+  return {
+    ...ninja,
+    status: gamerStatusTypes[ninja.belt]
+  };
+});
